@@ -15,6 +15,20 @@
         android:theme="@style/Theme.E_Mahalla"
         tools:targetApi="31">
         <activity
+            android:name=".AboutUs_activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Settings_activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Sign_Up_Activity"
             android:exported="false">
             <meta-data

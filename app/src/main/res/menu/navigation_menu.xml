@@ -6,8 +6,6 @@
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Aholi ro'yhati"
         tools:ignore="HardcodedText,MissingPrefix" />
-
-
     <item
         android:id="@+id/nav_share"
         android:icon="@drawable/ic_settings"

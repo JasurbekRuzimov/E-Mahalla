@@ -82,6 +82,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="320dp"
@@ -277,6 +278,8 @@
                 tools:ignore="MissingClass,MissingConstraints" />
 
         </LinearLayout>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

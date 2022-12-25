@@ -64,12 +64,15 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.nav_gallery:
-                    Toast.makeText(this, "Aholi ro'yhati", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this,Natijalar_Activity.class);
+                    startActivity(intent);
                     break;
                 case R.id.nav_share:
-                    Toast.makeText(this, "Sozlamalar", Toast.LENGTH_SHORT).show();
+                    Intent intent1= new Intent(MainActivity.this, Settings_activity.class);
+                    startActivity(intent1);
                     break;
                 case R.id.nav_share1:
+               //     Intent intent2= new Intent(MainActivity.this, Share_activity.class)
                     Toast.makeText(this, "Do'stlarga ulashish", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.nav_gallery1:
@@ -79,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "FAQ", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.nav_send:
-                    Toast.makeText(this, "Biz haqimizda", Toast.LENGTH_SHORT).show();
+                    Intent intent5 = new Intent(MainActivity.this, AboutUs_activity.class);
+                    startActivity(intent5);
                     break;
 
             }
