@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/nav_gallery"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Aholi ro'yhati"
+        tools:ignore="HardcodedText,MissingPrefix" />
 
+
+    <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/ic_settings"
+        android:title="Sozlamalar"
+        tools:ignore="HardcodedText,MissingPrefix" />
+    <item
+        android:id="@+id/nav_tools"
+        android:title="Qo'shimcha"
+        tools:ignore="HardcodedText,MissingPrefix" >
+
+        <menu>
+
+            <item
+                android:id="@+id/nav_share1"
+                android:icon="@drawable/share"
+                android:title="Do'stlarga ulashish"
+                tools:ignore="HardcodedText" />
+            <item
+                android:id="@+id/nav_gallery1"
+                android:icon="@drawable/ic_baseline_support_agent_24"
+                android:title="Qo'llab quvvatlash markazi"
+                tools:ignore="HardcodedText,MissingPrefix" />
+
+            <item
+                android:id="@+id/nav_slideshow1"
+                android:icon="@drawable/ic_baseline_question_answer_24"
+                android:title="F.A.Q"
+                tools:ignore="HardcodedText" />
+
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_baseline_info_24"
+                android:title="Biz haqimizda"
+                tools:ignore="HardcodedText" />
+
+        </menu>
+    </item>
 </menu>

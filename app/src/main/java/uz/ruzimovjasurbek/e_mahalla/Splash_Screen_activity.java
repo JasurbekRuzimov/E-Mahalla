@@ -1,12 +1,10 @@
 package uz.ruzimovjasurbek.e_mahalla;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import uz.ruzimovjasurbek.e_mahalla.ui.login.LoginActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Splash_Screen_activity extends AppCompatActivity {
 

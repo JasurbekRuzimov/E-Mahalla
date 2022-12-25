@@ -1,14 +1,16 @@
 package uz.ruzimovjasurbek.e_mahalla;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -16,6 +18,7 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.navigation.NavigationView;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean isBackPressed = false;
     PieChart pieChart;
     RoundedImageView roundedImageView;
+    ImageView navMenu;
 
     // O'zgaruvchilarni e'lon qilamiz
     LinearLayout linearLayout1;
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     // O'zgaruvchilarni e'lon qildik
 
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "NonConstantResourceId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,42 @@ public class MainActivity extends AppCompatActivity {
         roundedImageView = findViewById(R.id.roundedImageView);
 //        linearLayout5 = findViewById(R.id.imageView5);
         // 1 - 5 gacha bo'lgan id larni tanlash
+
+        // Navigation Bar uchun kodlar
+
+        DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
+        navMenu = findViewById(R.id.imagemenu);
+        navMenu.setOnClickListener(v -> {
+            drawerLayout.openDrawer(GravityCompat.START);
+        });
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.nav_gallery:
+                    Toast.makeText(this, "Aholi ro'yhati", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.nav_share:
+                    Toast.makeText(this, "Sozlamalar", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.nav_share1:
+                    Toast.makeText(this, "Do'stlarga ulashish", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.nav_gallery1:
+                    Toast.makeText(this, "Qo'llab quvvatlash markazi", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.nav_slideshow1:
+                    Toast.makeText(this, "FAQ", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.nav_send:
+                    Toast.makeText(this, "Biz haqimizda", Toast.LENGTH_SHORT).show();
+                    break;
+
+            }
+            return false;
+        });
+
+//       Navigation Bar uchun kodlar tugadi
+
 
 // Boshqa activityga o'tish
 
@@ -100,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
         data.setValueTextColor(Color.YELLOW);
         pieChart.setData(data);
         // PieChart tugadi
-
 
 
     }
