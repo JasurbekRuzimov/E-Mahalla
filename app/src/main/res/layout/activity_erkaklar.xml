@@ -105,7 +105,7 @@
         tools:ignore="HardcodedText,MissingConstraints">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/ErkakQoshish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"

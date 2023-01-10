@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-      android:background="@color/gray"
+    android:background="@color/white"
     tools:context=".Natijalar_Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,21 +23,22 @@
 
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/royxat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/constraintLayout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:fontFamily="@font/montserrat"
-            android:gravity="center"
-            android:text="E-Mahalla"
+            android:text="  Ro'yxatga olinganlar  "
             android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:textSize="26sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.672"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.136"
+            app:layout_constraintStart_toEndOf="@+id/backHome"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText,UnusedAttribute" />
+            tools:ignore="HardcodedText,MissingConstraints" />
 
         <LinearLayout
             android:id="@+id/backHome"
@@ -50,7 +51,6 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -73,80 +73,68 @@
 
         </LinearLayout>
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/roundedImageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/houses"
+        <ImageView
+            android:id="@+id/delete_all_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_delete_24"
+            android:tint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.673"
-            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/royxat"
             app:layout_constraintTop_toTopOf="parent"
-            app:riv_oval="true"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription,UseAppTint" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <TextView
-        android:id="@+id/royxat"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/constraintLayout"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/input_rectangle_background"
-        android:fontFamily="@font/montserrat"
-        android:text="  Ro'yxatga olinganlar  "
-        android:textColor="@color/black"
-        android:textSize="30sp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="?attr/actionBarSize"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.034"
+        tools:ignore="MissingClass,MissingConstraints" />
+
+
+    <ImageView
+        android:id="@+id/empty"
+        android:layout_width="235dp"
+        android:layout_height="235dp"
+        android:layout_marginTop="224dp"
+        android:src="@drawable/box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints"
+        tools:visibility="gone" />
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_above="@+id/button_parse"
-        android:layout_below="@+id/royxat"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="30dp"
-        style="@style/ThemeOverlay.Material3"
-        android:divider="@color/white"
-        android:dividerHeight="1dp"
-        android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_parse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/royxat"
-        app:layout_constraintVertical_bias="0.305"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/button_parse"
+    <TextView
+        android:id="@+id/empty_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/royxat"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat"
-        android:gravity="center"
-        android:text="  Ro'yxatni olish"
-        android:textAlignment="center"
-        android:textColor="@color/white"
+        android:text="Ro'yxatga olinganlar mavjud emas"
+        android:textColor="@color/primary"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@+id/empty"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:visibility="gone" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,28 +9,28 @@
     tools:context=".Sign_In_Activity">
 
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="364dp"
-        android:layout_height="208dp"
-        android:background="@color/gray"
-        android:src="@drawable/signin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="ContentDescription" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView8"-->
+<!--        android:layout_width="364dp"-->
+<!--        android:layout_height="208dp"-->
+<!--        android:background="@color/gray"-->
+<!--        android:src="@drawable/signin"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.0"-->
+<!--        tools:ignore="ContentDescription" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="parent"
         app:startIconDrawable="@drawable/ic_baseline_person_24"
         app:startIconTint="@color/primary"
         tools:ignore="MissingConstraints">
@@ -73,9 +73,10 @@
         android:id="@+id/sign_In"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="104dp"
+        android:background="@drawable/input_rectangle_background"
         android:fontFamily="@font/montserrat"
-        android:text="Kirish"
+        android:text="     Kirish     "
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

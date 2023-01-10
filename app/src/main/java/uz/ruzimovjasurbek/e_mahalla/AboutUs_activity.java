@@ -16,6 +16,7 @@ public class AboutUs_activity extends AppCompatActivity {
     LinearLayout linkedIn;
     LinearLayout youtube;
     LinearLayout twitter;
+    LinearLayout webSite;
 
 
     @SuppressLint("MissingInflatedId")
@@ -62,6 +63,12 @@ public class AboutUs_activity extends AppCompatActivity {
         twitter = findViewById(R.id.twitter);
         twitter.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/RuzimovJasurbek"));
+            startActivity(intent);
+        });
+
+        webSite= findViewById(R.id.WebSites);
+        webSite.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://jasurbekruzimov.uz"));
             startActivity(intent);
         });
 

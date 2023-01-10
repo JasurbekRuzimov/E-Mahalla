@@ -37,17 +37,15 @@ public class Chaqaloqlar_activity extends AppCompatActivity {
             finish();
         });
 
-
-
-//        lineChart = findViewById(R.id.lineChart);
-
-
-
-        addUser = findViewById(R.id.linearLayout);
+        addUser = findViewById(R.id.addBabyLayout);
         addUser.setOnClickListener(v -> {
             Intent intent = new Intent(Chaqaloqlar_activity.this, Demografik_Malumotlar.class);
             startActivity(intent);
         });
+
+//        lineChart = findViewById(R.id.lineChart);
+
+
 
         barChart = findViewById(R.id.barChart);
         ArrayList<BarEntry> barEntries = new ArrayList<>();

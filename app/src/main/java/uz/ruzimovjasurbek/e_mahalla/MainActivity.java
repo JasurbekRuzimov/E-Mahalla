@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // id larni e'lon qilish va tanlash
-        linearLayout1 = findViewById(R.id.imageView1);
-        linearLayout2 = findViewById(R.id.imageView2);
-        linearLayout3 = findViewById(R.id.imageView3);
-        linearLayout4 = findViewById(R.id.imageView4);
+        linearLayout1 = findViewById(R.id.Erkaklar);
+        linearLayout2 = findViewById(R.id.Ayollar);
+        linearLayout3 = findViewById(R.id.Chaqaloqlar);
+        linearLayout4 = findViewById(R.id.VafotEtganlar);
         roundedImageView = findViewById(R.id.roundedImageView);
 //        linearLayout5 = findViewById(R.id.imageView5);
         // 1 - 5 gacha bo'lgan id larni tanlash
@@ -64,22 +64,25 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.nav_gallery:
-                    Intent intent = new Intent(MainActivity.this,Natijalar_Activity.class);
+                    Intent intent = new Intent(MainActivity.this, Natijalar_Activity.class);
                     startActivity(intent);
                     break;
                 case R.id.nav_share:
-                    Intent intent1= new Intent(MainActivity.this, Settings_activity.class);
+                    Intent intent1 = new Intent(MainActivity.this, Settings_activity.class);
                     startActivity(intent1);
                     break;
                 case R.id.nav_share1:
-               //     Intent intent2= new Intent(MainActivity.this, Share_activity.class)
+                    //     Intent intent2= new Intent(MainActivity.this, Share_activity.class)
+
                     Toast.makeText(this, "Do'stlarga ulashish", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.nav_gallery1:
-                    Toast.makeText(this, "Qo'llab quvvatlash markazi", Toast.LENGTH_SHORT).show();
+                    Intent intent3 = new Intent(MainActivity.this, Support_Activity.class);
+                    startActivity(intent3);
                     break;
                 case R.id.nav_slideshow1:
-                    Toast.makeText(this, "FAQ", Toast.LENGTH_SHORT).show();
+                    Intent intent4 = new Intent(MainActivity.this, FAQ_activity.class);
+                    startActivity(intent4);
                     break;
                 case R.id.nav_send:
                     Intent intent5 = new Intent(MainActivity.this, AboutUs_activity.class);

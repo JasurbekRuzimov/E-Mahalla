@@ -98,10 +98,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:layout_width="match_parent"
@@ -123,23 +123,8 @@
             tools:visibility="visible" />
 
 
-<!--        <TextView-->
-<!--            style="@style/TextAppearance.AppCompat.Medium"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_marginStart="45dp"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:layout_marginEnd="45dp"-->
-<!--            android:fontFamily="@font/montserrat"-->
-<!--            android:text="Aholini ro'yxatga olish"-->
-<!--            android:textColor="@color/primary"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold"-->
-<!--            tools:ignore="HardcodedText" />-->
-
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
+            android:id="@+id/ismi"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -161,7 +146,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/viloyatId"
+            android:id="@+id/familiyasi"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -178,14 +163,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:hint="    Familiya"
+                android:hint="    Familiyasi"
                 android:inputType="textAutoComplete"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tumanId"
+            android:id="@+id/sharifi"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -206,7 +191,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
+            android:id="@+id/mahallasi"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -222,13 +207,13 @@
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
                 android:fontFamily="@font/montserrat"
-                android:hint="    Mahalla"
+                android:hint="    Mahallasi"
                 android:inputType="textAutoComplete"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout4"
+            android:id="@+id/jinsi"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -255,7 +240,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tugilganVaqtiId"
+            android:id="@+id/tugilganVaqti"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -277,31 +262,9 @@
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/vafotVaqtiId"-->
-<!--            style="@style/Widget.MaterialComponents.TextInpu/ tLayout.OutlinedBox"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_marginStart="45dp"-->
-<!--            android:layout_marginEnd="45dp"-->
-<!--            android:layout_marginBottom="10dp"-->
-<!--            app:startIconDrawable="@drawable/ic_baseline_calendar_month_24"-->
-<!--            app:startIconTint="@color/primary">-->
-
-
-<!--            <com.google.android.material.textfield.TextInputEditText-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"-->
-<!--                android:fontFamily="@font/montserrat"-->
-<!--                android:hint="    Vafot etgan vaqti"-->
-<!--                android:inputType="datetime"-->
-<!--                tools:ignore="HardcodedText" />-->
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <Button
-            android:id="@+id/register"
+            android:id="@+id/royxatgaOlish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

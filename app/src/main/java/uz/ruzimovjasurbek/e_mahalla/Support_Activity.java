@@ -6,18 +6,18 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
-public class Settings_activity extends AppCompatActivity {
+public class Support_Activity extends AppCompatActivity {
+
     LinearLayout backHome;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_support);
 
-        backHome=findViewById(R.id.backHome);
+        backHome = findViewById(R.id.backHome11);
         backHome.setOnClickListener(v -> finish());
-
-
 
 
 

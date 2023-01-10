@@ -100,7 +100,7 @@
             tools:ignore="MissingConstraints">
 
             <LinearLayout
-                android:id="@+id/imageView1"
+                android:id="@+id/Erkaklar"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_margin="15dp"
@@ -135,7 +135,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/imageView2"
+                android:id="@+id/Ayollar"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_margin="15dp"
@@ -186,7 +186,7 @@
             tools:ignore="MissingConstraints">
 
             <LinearLayout
-                android:id="@+id/imageView3"
+                android:id="@+id/Chaqaloqlar"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_margin="15dp"
@@ -219,7 +219,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/imageView4"
+                android:id="@+id/VafotEtganlar"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_margin="15dp"

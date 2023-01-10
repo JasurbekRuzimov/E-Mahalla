@@ -9,27 +9,27 @@
     tools:context=".Sign_Up_Activity">
 
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="353dp"
-        android:layout_height="170dp"
-        android:background="@color/gray"
-        android:src="@drawable/signup"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView7"-->
+<!--        android:layout_width="353dp"-->
+<!--        android:layout_height="170dp"-->
+<!--        android:background="@color/gray"-->
+<!--        android:src="@drawable/signup"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.022" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginId"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="132dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="parent"
         app:startIconDrawable="@drawable/ic_baseline_person_24"
         app:startIconTint="@color/primary"
         tools:ignore="MissingConstraints">
@@ -95,10 +95,11 @@
         android:id="@+id/signUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="@font/montserrat"
         android:text="Ro'yhatdan o'tish"
         android:textColor="@color/white"
+        android:background="@drawable/input_rectangle_background"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

@@ -54,7 +54,7 @@ public class Erkaklar_activity extends AppCompatActivity {
         barChart.getDescription().setTextColor(R.color.primary);
 
 
-        addUser = findViewById(R.id.linearLayout);
+        addUser = findViewById(R.id.ErkakQoshish);
         addUser.setOnClickListener(v -> {
             Intent intent = new Intent(Erkaklar_activity.this, Demografik_Malumotlar.class);
             startActivity(intent);
