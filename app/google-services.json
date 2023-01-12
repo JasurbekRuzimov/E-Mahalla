@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "100436321721",
+    "project_id": "e-mahalla",
+    "storage_bucket": "e-mahalla.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100436321721:android:387939a4c716df7ff48268",
+        "android_client_info": {
+          "package_name": "uz.ruzimovjasurbek.e_mahalla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100436321721-r9hvfn41msq21v2s6j3dh2vs5hqjea1v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXsxljQybpTtg_9wAVNahOSIrNLxge_Kg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100436321721-r9hvfn41msq21v2s6j3dh2vs5hqjea1v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

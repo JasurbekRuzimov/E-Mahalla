@@ -72,9 +72,13 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent1);
                     break;
                 case R.id.nav_share1:
-                    //     Intent intent2= new Intent(MainActivity.this, Share_activity.class)
-
-                    Toast.makeText(this, "Do'stlarga ulashish", Toast.LENGTH_SHORT).show();
+                    Intent intent2 = new Intent(Intent.ACTION_SEND);
+                    intent2.setType("text/plain");
+                    String shareBody = "https://play.google.com/store/apps/details?id=uz.ruzimovjasurbek.e_mahalla";
+                    String shareSub = "E-Mahalla";
+                    intent2.putExtra(Intent.EXTRA_SUBJECT, shareSub);
+                    intent2.putExtra(Intent.EXTRA_TEXT, shareBody);
+                    startActivity(Intent.createChooser(intent2, "Share Using"));
                     break;
                 case R.id.nav_gallery1:
                     Intent intent3 = new Intent(MainActivity.this, Support_Activity.class);
@@ -125,6 +129,11 @@ public class MainActivity extends AppCompatActivity {
         // boshqa activityga o'tish tugadi
 
         // PieChart
+        //Values in TextInputLayouts should be displayed using percentages in pieChart, separated by gender
+
+
+
+
         pieChart = findViewById(R.id.pieChart);
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(false);

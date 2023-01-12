@@ -61,7 +61,7 @@ public class Vafot_Etganlar_activity extends AppCompatActivity {
 
 
 
-        addUser = findViewById(R.id.linearLayout);
+        addUser = findViewById(R.id.VafotEtganlarniQoshish);
         addUser.setOnClickListener(v -> {
             Intent intent = new Intent(Vafot_Etganlar_activity.this, Demografik_Malumotlar_Vafot_etganlar.class);
             startActivity(intent);

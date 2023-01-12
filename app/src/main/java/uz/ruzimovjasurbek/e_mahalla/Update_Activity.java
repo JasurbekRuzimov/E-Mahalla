@@ -50,24 +50,19 @@ public class Update_Activity extends AppCompatActivity {
             finish();
         });
 
-        getAndSetIntentData();
-
-        ActionBar ab = getSupportActionBar();
-        if (ab != null) {
-            ab.setTitle(ismi);
-        }
-
-
 
         addbaby = findViewById(R.id.royxatgaOlish_update);
-        addbaby.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DBHelper dbHelper = new DBHelper(Update_Activity.this);
-                dbHelper.updateData(id, ismi, familiyasi, otasiningIsmi, mahallasi, jinsi, tugilganVaqti);
-                Toast.makeText(Update_Activity.this, "Yangilandi", Toast.LENGTH_SHORT).show();
+        getAndSetIntentData();
 
-            }
+        addbaby.setOnClickListener(v -> {
+            DBHelper myDB = new DBHelper(Update_Activity.this);
+            ismi = Objects.requireNonNull(Ismi.getEditText()).getText().toString().trim();
+            familiyasi = Objects.requireNonNull(Familiyasi.getEditText()).getText().toString().trim();
+            otasiningIsmi = Objects.requireNonNull(OtasiningIsmi.getEditText()).getText().toString().trim();
+            mahallasi = Objects.requireNonNull(Mahallasi.getEditText()).getText().toString().trim();
+            jinsi = Objects.requireNonNull(Jinsi.getEditText()).getText().toString().trim();
+            tugilganVaqti = Objects.requireNonNull(TugilganVaqti.getEditText()).getText().toString().trim();
+            myDB.updateData(id, ismi, familiyasi, otasiningIsmi, mahallasi, jinsi, tugilganVaqti);
         });
 
         delete_button.setOnClickListener(new View.OnClickListener() {

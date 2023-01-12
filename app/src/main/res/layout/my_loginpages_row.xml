@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/mainLayout">
+    android:id="@+id/mainLayout_LoginPages">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true"
@@ -22,44 +24,40 @@
             android:layout_height="wrap_content"
             android:padding="8dp">
 
-            <TextView
+            <ImageView
                 android:id="@+id/user_image_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_rectangle_background"
-                android:fontFamily="@font/montserrat"
-                android:padding="5dp"
-                android:text="1"
-                android:textColor="@color/primary"
-                android:textSize="30sp"
-                android:textStyle="bold"
+                android:layout_width="37dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_baseline_person_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="HardcodedText" />
+                tools:ignore="ContentDescription,HardcodedText" />
 
             <TextView
                 android:id="@+id/loginName_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Jasurbek"
+                android:text="Login :"
                 android:textColor="@color/primary"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/user_image_txt"
-                app:layout_constraintTop_toTopOf="@+id/user_image_txt"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="HardcodedText" />
 
 
             <TextView
-                android:id="@+id/familiya_txt"
+                android:id="@+id/login_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="28dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Ruzimov"
+                android:text="User"
                 android:textColor="@color/primary"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -68,26 +66,12 @@
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/sharifi_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Oybek o'g'li"
-                android:textColor="@color/primary"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/familiya_txt"
-                app:layout_constraintTop_toTopOf="@+id/familiya_txt"
-                tools:ignore="HardcodedText" />
-
-            <TextView
                 android:id="@+id/mahalla_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Kamolot"
+                android:text="Parol : "
                 android:textColor="@color/primary"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -96,44 +80,42 @@
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/jinsi_txt"
+                android:id="@+id/parol_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Erkak"
-                android:textColor="@color/primary"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/sharifi_txt"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:id="@+id/tugilganVaqti_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat"
-                android:text="20.06.2001"
-                android:textColor="@color/primary"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/mahalla_txt"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:id="@+id/mahalla_nomi_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Mahallasi"
+                android:text="user"
                 android:textColor="@color/primary"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/mahalla_txt"
                 app:layout_constraintTop_toTopOf="@+id/mahalla_txt"
                 tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/deleteLoginData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:tint="@color/red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_delete_24"
+                tools:ignore="ContentDescription,UseAppTint" />
+
+            <ImageView
+                android:id="@+id/updateLoginData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:tint="@color/yellow"
+                app:layout_constraintBottom_toBottomOf="@+id/deleteLoginData"
+                app:layout_constraintEnd_toStartOf="@+id/deleteLoginData"
+                app:layout_constraintTop_toTopOf="@+id/deleteLoginData"
+                app:srcCompat="@drawable/ic_baseline_edit_24"
+                tools:ignore="ContentDescription,UseAppTint" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

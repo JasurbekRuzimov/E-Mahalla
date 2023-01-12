@@ -24,8 +24,7 @@
         </activity>
         <activity
             android:name=".Update_Activity"
-            android:parentActivityName=".Natijalar_Activity"
-            >
+            android:parentActivityName=".Natijalar_Activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

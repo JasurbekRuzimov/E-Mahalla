@@ -60,7 +60,7 @@ public class Ayollar_activity extends AppCompatActivity {
 
 
 
-        addUser=findViewById(R.id.linearLayout);
+        addUser=findViewById(R.id.AyolQoshish);
         addUser.setOnClickListener(v -> {
             Intent intent=new Intent(Ayollar_activity.this,Demografik_Malumotlar.class);
             startActivity(intent);

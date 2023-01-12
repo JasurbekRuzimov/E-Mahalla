@@ -7,22 +7,30 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    private Context context;
+    private final Context context;
     Activity activity;
-    private ArrayList<String> user_id, ismi, familiyasi, otasining_ismi, mahallasi, jinsi, tugilgan_vaqti;
+    private final ArrayList<String> user_id;
+    private final ArrayList<String> ismi;
+    private final ArrayList<String> familiyasi;
+    private final ArrayList<String> otasining_ismi;
+    private final ArrayList<String> mahallasi;
+    private final ArrayList<String> jinsi;
+    private final ArrayList<String> tugilgan_vaqti;
     int position;
+    Animation translate_anim;
+
+
 
     CustomAdapter(Activity activity, Context context, ArrayList<String> user_id, ArrayList<String> ismi, ArrayList<String> familiyasi, ArrayList<String> otasining_ismi, ArrayList<String> mahallasi, ArrayList<String> jinsi, ArrayList<String> tugilgan_vaqti) {
        this.activity = activity;
@@ -36,6 +44,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         this.tugilgan_vaqti = tugilgan_vaqti;
     }
 
+
+
+    @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -54,6 +65,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.mahalla_txt.setText(String.valueOf(mahallasi.get(position)));
         holder.jinsi_txt.setText(String.valueOf(jinsi.get(position)));
         holder.tugilganVaqti_txt.setText(String.valueOf(tugilgan_vaqti.get(position)));
+
 
         holder.mainLayout.setOnClickListener(v -> {
             Intent intent = new Intent(context, Update_Activity.class);
@@ -81,15 +93,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            user_id_txt = itemView.findViewById(R.id.user_id_txt);
-            ism_txt = itemView.findViewById(R.id.ism_txt);
+            user_id_txt = itemView.findViewById(R.id.user_image_txt);
+            ism_txt = itemView.findViewById(R.id.loginName_txt);
             familiya_txt = itemView.findViewById(R.id.familiya_txt);
             sharifi_txt = itemView.findViewById(R.id.sharifi_txt);
             mahalla_txt = itemView.findViewById(R.id.mahalla_txt);
             jinsi_txt = itemView.findViewById(R.id.jinsi_txt);
             tugilganVaqti_txt = itemView.findViewById(R.id.tugilganVaqti_txt);
-
             mainLayout = itemView.findViewById(R.id.mainLayout);
+
+            // Animation
+            translate_anim = android.view.animation.AnimationUtils.loadAnimation(context, R.anim.translate_anim);
+            mainLayout.setAnimation(translate_anim);
 
         }
     }

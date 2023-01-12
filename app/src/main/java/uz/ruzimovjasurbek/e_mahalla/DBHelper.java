@@ -86,6 +86,10 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor.getCount() > 0;
     }
 
+
+
+
+
     public void mahalla(String ismi, String familiyasi, String sharifi, String mahallasi, String jinsi, String tugilganYili) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -128,6 +132,7 @@ public class DBHelper extends SQLiteOpenHelper {
         } else {
             Toast.makeText(context, "Ma'lumotlar yangilandi !", Toast.LENGTH_SHORT).show();
         }
+
     }
 
         void deleteOneRow(String row_id) {
@@ -144,5 +149,7 @@ public class DBHelper extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getWritableDatabase();
             db.execSQL("DELETE FROM " + TABLE_NAME);
         }
+
+
 
 }

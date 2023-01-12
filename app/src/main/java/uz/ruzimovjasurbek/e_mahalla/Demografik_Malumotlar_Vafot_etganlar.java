@@ -16,9 +16,6 @@ LinearLayout backHome;
         setContentView(R.layout.activity_demografik_malumotlar_vafot_etganlar);
 
         addBaby = findViewById(R.id.register);
-        addBaby.setOnClickListener(v -> {
-            Toast.makeText(this, "Ro'yxatga qo'shildi", Toast.LENGTH_SHORT).show();
-        });
 
         backHome = findViewById(R.id.backHome);
         backHome.setOnClickListener(v -> {

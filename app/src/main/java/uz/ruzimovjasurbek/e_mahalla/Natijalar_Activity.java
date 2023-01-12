@@ -54,12 +54,10 @@ public class Natijalar_Activity extends AppCompatActivity {
         empty = findViewById(R.id.empty);
         empty_text = findViewById(R.id.empty_text);
 
-
         delete_all_data = findViewById(R.id.delete_all_data);
         delete_all_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(Natijalar_Activity.this);
                 builder.setTitle("Barcha ma'lumotlarni o'chirishni xohlaysizmi?");
                 builder.setMessage("Bu amalni qayta tiklash imkoni yo'q");
@@ -80,7 +78,6 @@ public class Natijalar_Activity extends AppCompatActivity {
                     }
                 });
                 builder.create().show();
-
             }
 
         });
