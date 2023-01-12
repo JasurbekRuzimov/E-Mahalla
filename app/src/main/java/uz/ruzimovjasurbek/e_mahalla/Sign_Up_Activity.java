@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.Objects;
+
 public class Sign_Up_Activity extends AppCompatActivity {
     TextInputLayout login, password, confirm_password;
     Button sign_up;
@@ -19,7 +21,6 @@ public class Sign_Up_Activity extends AppCompatActivity {
     DBHelper DB;
 
     public boolean isBackPressed = false;
-
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +36,9 @@ public class Sign_Up_Activity extends AppCompatActivity {
 
 
         sign_up.setOnClickListener(v -> {
-            String user = login.getEditText().getText().toString();
-            String pass = password.getEditText().getText().toString();
-            String confirm_pass = confirm_password.getEditText().getText().toString();
+            String user = Objects.requireNonNull(login.getEditText()).getText().toString();
+            String pass = Objects.requireNonNull(password.getEditText()).getText().toString();
+            String confirm_pass = Objects.requireNonNull(confirm_password.getEditText()).getText().toString();
 
             if (user.equals("") || pass.equals("") || confirm_pass.equals("")) {
                 Toast.makeText(Sign_Up_Activity.this, "Iltimos, barcha maydonlarni to'ldiring !", Toast.LENGTH_SHORT).show();

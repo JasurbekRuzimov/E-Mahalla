@@ -4,32 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="45dp"
     android:background="@color/gray"
-    tools:context=".Sign_Up_Activity">
+    android:padding="45dp"
+    tools:context=".SignUp_Firebase_Activity">
 
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView7"-->
-<!--        android:layout_width="353dp"-->
-<!--        android:layout_height="170dp"-->
-<!--        android:background="@color/gray"-->
-<!--        android:src="@drawable/signup"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.022" />-->
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginId"
+        android:id="@+id/phoneNumberId_Firebase"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailIdFairbase"
         app:startIconDrawable="@drawable/ic_baseline_person_24"
         app:startIconTint="@color/primary"
         tools:ignore="MissingConstraints">
@@ -38,23 +26,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/montserrat"
-            android:hint="    Login"
-            android:inputType="textAutoComplete"
+            android:hint="    Telefon raqami"
+            android:inputType="phone"
+            android:maxLength="13"
+            app:textInputLayoutFocusedRectEnabled="false"
             tools:ignore="HardcodedText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordId"
+        android:id="@+id/passwordId_Fairbase"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        app:endIconTint="@color/primary"
-        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginId"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumberId_Firebase"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/primary"
         app:startIconDrawable="@drawable/ic_baseline_lock_24"
         app:startIconTint="@color/primary"
         tools:ignore="MissingConstraints">
@@ -69,18 +59,17 @@
             tools:ignore="HardcodedText" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ConfirmPasswordId"
+        android:id="@+id/emailIdFairbase"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="15dp"
-        app:endIconTint="@color/primary"
-        app:passwordToggleEnabled="true"
+        android:layout_marginTop="144dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordId"
-        app:startIconDrawable="@drawable/ic_baseline_lock_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_email_24"
         app:startIconTint="@color/primary"
         tools:ignore="MissingConstraints">
 
@@ -88,54 +77,56 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:hint="    Parolni tasdiqlang"
+            android:hint="    Email"
             android:inputType="textEmailAddress"
             tools:ignore="HardcodedText" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/signUpButton"
+        android:id="@+id/signUpButton_Firebase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Ro'yhatdan o'tish"
-        android:textColor="@color/white"
+        android:layout_marginTop="24dp"
         android:background="@drawable/input_rectangle_background"
+        android:fontFamily="@font/montserrat"
+        android:text="Ro'yxatdan o'tish"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswordId"
+        app:layout_constraintTop_toBottomOf="@+id/passwordId_Fairbase"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
         android:id="@+id/alreadyHaveAnAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:fontFamily="@font/montserrat"
         android:text="Kirish"
         android:textColor="@color/red"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/signUpButton"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toEndOf="@+id/alreadyHaveAnAccount1"
-        app:layout_constraintTop_toBottomOf="@+id/signUpButton"
+        app:layout_constraintTop_toTopOf="@+id/alreadyHaveAnAccount1"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
         android:id="@+id/alreadyHaveAnAccount1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/montserrat"
         android:text="Ro'yhatdan o'tganmisiz? "
         android:textColor="@color/primary"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/signUpButton"
-        app:layout_constraintTop_toBottomOf="@+id/signUpButton"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signUpButton_Firebase"
         tools:ignore="HardcodedText,MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

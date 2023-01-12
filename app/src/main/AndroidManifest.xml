@@ -16,6 +16,20 @@
         android:theme="@style/Theme.E_Mahalla"
         tools:targetApi="31">
         <activity
+            android:name=".SignIn_Firebase_Activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SignUp_Firebase_Activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Support_Activity"
             android:exported="false">
             <meta-data
