@@ -26,7 +26,8 @@ public class Erkaklar_activity extends AppCompatActivity {
     LinearLayout backHome;
     PieChart pieChart;
     LinearLayout addUser;
-
+    TextView textView;
+Demografik_Malumotlar demografik_malumotlar = new Demografik_Malumotlar();
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +40,12 @@ public class Erkaklar_activity extends AppCompatActivity {
             finish();
         });
 
+        textView = findViewById(R.id.textView5);
+        MainActivity.Counter counter = new MainActivity.Counter(demografik_malumotlar.erkaklarSoni, textView);
+        counter.start();
 
 
-
-        pieChart=findViewById(R.id.pieChartMan);
+        pieChart = findViewById(R.id.pieChartMan);
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5, 10, 5, 5);
@@ -52,9 +55,8 @@ public class Erkaklar_activity extends AppCompatActivity {
         pieChart.animateY(3000);
         pieChart.setTransparentCircleRadius(61f);
         ArrayList<PieEntry> yValues = new ArrayList<>();
-        yValues.add(new PieEntry(42f, "30 yoshdan kichik"));
-        yValues.add(new PieEntry(33f, "30-50 yosh"));
-        yValues.add(new PieEntry(25f, "50 yoshdan katta"));
+        yValues.add(new PieEntry(demografik_malumotlar.erkaklarSoni, "30 yoshdan kichik"));
+        yValues.add(new PieEntry(demografik_malumotlar.ayollarSoni, "30-50 yosh"));
         PieDataSet dataSet = new PieDataSet(yValues, "Erkaklar");
         dataSet.setSliceSpace(10f);
         dataSet.setSelectionShift(15f);

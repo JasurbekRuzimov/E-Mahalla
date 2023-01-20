@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,18 +16,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
     private final Context context;
     Activity activity;
     private final ArrayList<String> user_id;
-    private final ArrayList<String> ismi;
-    private final ArrayList<String> familiyasi;
-    private final ArrayList<String> otasining_ismi;
-    private final ArrayList<String> mahallasi;
-    private final ArrayList<String> jinsi;
-    private final ArrayList<String> tugilgan_vaqti;
+    private ArrayList<String> ismi;
+    private ArrayList<String> familiyasi;
+    private ArrayList<String> otasining_ismi;
+    private ArrayList<String> mahallasi;
+    private ArrayList<String> jinsi;
+    private ArrayList<String> tugilgan_vaqti;
     int position;
     Animation translate_anim;
 
@@ -85,6 +87,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public int getItemCount() {
         return user_id.size();
     }
+
+
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 

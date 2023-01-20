@@ -3,6 +3,7 @@ package uz.ruzimovjasurbek.e_mahalla;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -28,12 +30,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Natijalar_Activity extends AppCompatActivity {
     LinearLayout backHome;
@@ -43,6 +47,7 @@ public class Natijalar_Activity extends AppCompatActivity {
     CustomAdapter customAdapter;
     ImageView delete_all_data, empty;
     TextView empty_text;
+    FloatingActionButton floatingActionButton;
 
 
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
@@ -51,9 +56,11 @@ public class Natijalar_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_natijalar);
 
+
+        // id larni e'lon qilish va tanlash
         empty = findViewById(R.id.empty);
         empty_text = findViewById(R.id.empty_text);
-
+        floatingActionButton = findViewById(R.id.floatingActionButton);
         delete_all_data = findViewById(R.id.delete_all_data);
         delete_all_data.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +107,11 @@ public class Natijalar_Activity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Natijalar_Activity.this));
+
+
+
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -129,7 +140,18 @@ public class Natijalar_Activity extends AppCompatActivity {
             empty.setVisibility(View.GONE);
             empty_text.setVisibility(View.GONE);
         }
+
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Natijalar_Activity.this, Demografik_Malumotlar.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 
 
 }

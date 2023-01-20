@@ -203,6 +203,7 @@
             app:startIconTint="@color/primary">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Mahallasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
@@ -229,6 +230,7 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Jinsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
@@ -253,6 +255,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/BirthDataTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
@@ -275,10 +278,10 @@
             android:backgroundTint="@color/primary"
             android:fontFamily="@font/montserrat"
             android:padding="10dp"
-            android:text="Ro'yhatga qo'shish"
+            android:text="Ro'yxatga qo'shish"
             android:textColor="@color/white"
             android:textSize="20sp"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText,UsingOnClickInXml" />
 
 
     </LinearLayout>

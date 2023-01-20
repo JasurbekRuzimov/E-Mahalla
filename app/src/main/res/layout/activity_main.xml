@@ -17,15 +17,12 @@
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="74dp"
-            android:layout_marginBottom="24dp"
             android:background="@color/primary"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout_usti"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints,NotSibling">
 
 
@@ -54,6 +51,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:src="@drawable/ic_menu"
                 android:tint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -70,6 +69,8 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:src="@drawable/houses"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -86,8 +87,9 @@
         <LinearLayout
             android:id="@+id/linearLayout_usti"
             android:layout_width="320dp"
-            android:layout_height="162dp"
-            android:background="@color/gray"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/input_rectangle_background"
             android:foregroundGravity="center_vertical"
             android:gravity="top|center_horizontal"
             android:orientation="horizontal"
@@ -95,16 +97,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.141"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints">
 
             <LinearLayout
                 android:id="@+id/Erkaklar"
                 android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_margin="15dp"
-                android:background="@drawable/rectangle_background"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
                 android:orientation="vertical"
                 android:padding="15dp"
                 android:paddingBottom="15dp"
@@ -124,7 +126,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="0.2"
                     android:fontFamily="@font/montserrat"
                     android:text="Erkaklar"
                     android:textColor="@color/primary"
@@ -134,12 +135,13 @@
 
             </LinearLayout>
 
+
             <LinearLayout
                 android:id="@+id/Ayollar"
                 android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_margin="15dp"
-                android:background="@drawable/rectangle_background"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
                 android:orientation="vertical"
                 android:padding="15dp"
                 android:weightSum="1">
@@ -157,7 +159,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:layout_weight="0.2"
                     android:fontFamily="@font/montserrat"
                     android:gravity="center"
                     android:text="@string/ayollar"
@@ -172,58 +173,25 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="320dp"
-            android:layout_height="162dp"
-            android:background="@color/gray"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/input_rectangle_background"
             android:foregroundGravity="center_vertical"
             android:gravity="top|center_horizontal"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout_usti"
             app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout_usti"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout_usti"
-            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints">
-
-            <LinearLayout
-                android:id="@+id/Chaqaloqlar"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_margin="15dp"
-                android:background="@drawable/rectangle_background"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:weightSum="1">
-
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.8"
-                    android:src="@drawable/babyboy"
-                    tools:ignore="ContentDescription,InefficientWeight" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.1"
-                    android:fontFamily="@font/montserrat"
-                    android:text="Chaqaloqlar"
-                    android:textColor="@color/primary"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    tools:ignore="HardcodedText" />
-
-            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/VafotEtganlar"
                 android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_margin="15dp"
-                android:background="@drawable/rectangle_background"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@color/white"
                 android:orientation="vertical"
                 android:padding="15dp"
                 android:paddingBottom="15dp"
@@ -239,58 +207,233 @@
                     android:src="@drawable/tombstone"
                     tools:ignore="ContentDescription,InefficientWeight" />
 
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/Chaqaloqlar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:weightSum="1">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_weight="0.1"
+                    android:layout_marginBottom="5dp"
                     android:fontFamily="@font/montserrat"
                     android:text="Vafot etganlar"
                     android:textAlignment="center"
                     android:textColor="@color/primary"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/VafotEtganlar_soni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="5dp"
+                    android:text=" 0 "
+                    android:textColor="@color/primary"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,TextViewEdits" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/imageView115"
+            android:layout_width="320dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/input_rectangle_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+            tools:ignore="DuplicateIds,MissingConstraints">
+
+            <LinearLayout
+                android:id="@+id/Chaqaloqlar333"
+                android:layout_width="130dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:weightSum="1">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.8"
+                    android:src="@drawable/overpopulation"
+                    tools:ignore="ContentDescription,InefficientWeight" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Chaqaloqlar334"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_marginStart="45dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.1"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" Umumiy aholi "
+                    android:textColor="@color/primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,InefficientWeight" />
+
+                <TextView
+                    android:id="@+id/AllPeopleCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text=" 0 "
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:textColor="@color/primary"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,InefficientWeight,TextViewEdits,UsingOnClickInXml" />
 
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/imageView5"
-            android:layout_width="338dp"
-            android:layout_height="355dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/rectangle_background"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-            app:layout_constraintVertical_bias="0.0"
-            tools:ignore="DuplicateIds,MissingConstraints">
+            android:id="@+id/AholiRoyxati"
+            android:layout_width="320dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/input_rectangle_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/imageView115"
+            app:layout_constraintStart_toStartOf="@+id/imageView115"
+            app:layout_constraintTop_toBottomOf="@+id/imageView115">
 
-            <com.github.mikephil.charting.charts.PieChart
-                android:id="@+id/pieChart"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="Aholi ro'yxati"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="130dp"
+                android:layout_height="90dp"
                 android:layout_margin="10dp"
-                tools:ignore="MissingClass,MissingConstraints" />
-
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:srcCompat="@drawable/chart" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/AholiQoshish"
+            android:layout_width="320dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/input_rectangle_background"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/AholiRoyxati"
+            app:layout_constraintStart_toStartOf="@+id/AholiRoyxati"
+            app:layout_constraintTop_toBottomOf="@+id/AholiRoyxati">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
+                android:padding="15dp"
+                android:text="Aholi qo'shish"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue"
+                android:clickable="true"
+                android:contentDescription="@string/todo"
+                android:focusable="true"
+                app:srcCompat="@drawable/baseline_person_add_alt_1_24" />
+
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:background="@color/gray"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:paddingTop="20dp"
         android:layout_gravity="start"
+        android:background="@color/gray"
         android:fitsSystemWindows="true"
+        android:paddingTop="20dp"
         app:headerLayout="@layout/nav_header_main"
         app:itemIconTint="@color/primary"
         app:itemTextColor="@color/primary"

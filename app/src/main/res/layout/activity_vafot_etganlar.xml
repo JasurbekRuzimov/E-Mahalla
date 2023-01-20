@@ -154,17 +154,17 @@
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textView66"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/rectangle_background"
+            android:background="@color/white"
             android:fontFamily="@font/montserrat"
             android:gravity="center"
             android:importantForAutofill="auto"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:text="10 421"
+            android:text=" 0 "
             android:textColor="@color/primary"
             android:textSize="33sp"
             android:textStyle="bold"

@@ -25,6 +25,31 @@ public class DBHelper extends SQLiteOpenHelper {
         this.context = context;
     }
 
+    public static int getMahallaCount() {
+        int mahallaCount;
+        SQLiteDatabase db = new DBHelper(null).getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        mahallaCount = cursor.getCount();
+        return mahallaCount;
+    }
+
+    public static int getErkaklarCount() {
+        int erkaklarCount;
+        SQLiteDatabase db = new DBHelper(null).getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + Jinsi + " = 'Erkak'", null);
+        erkaklarCount = cursor.getCount();
+        return erkaklarCount;
+    }
+
+    public static int getAyollarCount() {
+        int ayollarCount;
+        SQLiteDatabase db = new DBHelper(null).getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + Jinsi + " = 'Ayol'", null);
+        ayollarCount = cursor.getCount();
+        return ayollarCount;
+    }
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table users ("
@@ -32,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + "login text,"
                 + "password text" + ");");
 
-        String query = "CREATE TABLE " + TABLE_NAME + " ("+ COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        String query = "CREATE TABLE " + TABLE_NAME + " (" + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 Ismi + " TEXT, " +
                 Familiyasi + " TEXT, " +
                 Sharifi + " TEXT, " +
@@ -49,6 +74,10 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
         db.execSQL("drop table if exists " + TABLE_NAME);
         onCreate(db);
+
+        if (oldVersion == 1 && newVersion == 2) {
+            db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN " + TugilganYili + " TimeStamp DEFAULT CURRENT_TIMESTAMP");
+        }
     }
 
     public Boolean insertData(String login, String password) {
@@ -87,9 +116,6 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-
-
-
     public void mahalla(String ismi, String familiyasi, String sharifi, String mahallasi, String jinsi, String tugilganYili) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -117,7 +143,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-     void updateData(String row_id, String ismi, String familiyasi, String sharifi, String mahallasi, String jinsi, String tugilganYili) {
+    void updateData(String row_id, String ismi, String familiyasi, String sharifi, String mahallasi, String jinsi, String tugilganYili) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Ismi, ismi);
@@ -135,21 +161,20 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-        void deleteOneRow(String row_id) {
-            SQLiteDatabase db = this.getWritableDatabase();
-            long result = db.delete(TABLE_NAME, "id=?", new String[]{row_id});
-            if (result == -1) {
-                Toast.makeText(context, "Xatolik yuz berdi !", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(context, "Ma'lumotlar o'chirildi !", Toast.LENGTH_SHORT).show();
-            }
+    void deleteOneRow(String row_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "id=?", new String[]{row_id});
+        if (result == -1) {
+            Toast.makeText(context, "Xatolik yuz berdi !", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Ma'lumotlar o'chirildi !", Toast.LENGTH_SHORT).show();
         }
+    }
 
-        void deleteAllData() {
-            SQLiteDatabase db = this.getWritableDatabase();
-            db.execSQL("DELETE FROM " + TABLE_NAME);
-        }
-
+    void deleteAllData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME);
+    }
 
 
 }

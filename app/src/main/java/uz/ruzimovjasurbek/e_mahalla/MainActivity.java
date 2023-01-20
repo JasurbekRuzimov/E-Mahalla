@@ -6,35 +6,36 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.makeramen.roundedimageview.RoundedImageView;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public boolean isBackPressed = false;
-    PieChart pieChart;
-    RoundedImageView roundedImageView;
+
+    //    PieChart pieChart;
+    FloatingActionButton floatingActionButton;
     ImageView navMenu;
+
+    Demografik_Malumotlar demografik_malumotlar = new Demografik_Malumotlar();
 
     // O'zgaruvchilarni e'lon qilamiz
     LinearLayout linearLayout1;
     LinearLayout linearLayout2;
-    LinearLayout linearLayout3;
+    //   LinearLayout linearLayout3;
     LinearLayout linearLayout4;
-//    LinearLayout linearLayout5;
+    //    LinearLayout linearLayout5;
+    LinearLayout linearLayout6;
+    LinearLayout linearLayout7;
+    TextView textView;
+
     // O'zgaruvchilarni e'lon qildik
 
 
@@ -45,13 +46,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // id larni e'lon qilish va tanlash
+        floatingActionButton = findViewById(R.id.floatingActionButton2);
         linearLayout1 = findViewById(R.id.Erkaklar);
         linearLayout2 = findViewById(R.id.Ayollar);
-        linearLayout3 = findViewById(R.id.Chaqaloqlar);
+        // linearLayout3 = findViewById(R.id.Chaqaloqlar);
         linearLayout4 = findViewById(R.id.VafotEtganlar);
-        roundedImageView = findViewById(R.id.roundedImageView);
 //        linearLayout5 = findViewById(R.id.imageView5);
+        linearLayout6 = findViewById(R.id.AholiRoyxati);
+        linearLayout7 = findViewById(R.id.AholiQoshish);
+        textView = findViewById(R.id.AllPeopleCount);
+
         // 1 - 5 gacha bo'lgan id larni tanlash
+
+
 
         // Navigation Bar uchun kodlar
 
@@ -102,6 +109,11 @@ public class MainActivity extends AppCompatActivity {
 
 // Boshqa activityga o'tish
 
+        floatingActionButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Demografik_Malumotlar.class);
+            startActivity(intent);
+        });
+
         linearLayout1.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, Erkaklar_activity.class);
             startActivity(intent);
@@ -110,53 +122,32 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, Ayollar_activity.class);
             startActivity(intent);
         });
-        linearLayout3.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, Chaqaloqlar_activity.class);
-            startActivity(intent);
-        });
+
         linearLayout4.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, Vafot_Etganlar_activity.class);
             startActivity(intent);
         });
-        roundedImageView.setOnClickListener(v -> {
+
+        linearLayout6.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, Natijalar_Activity.class);
             startActivity(intent);
         });
-//        linearLayout5.setOnClickListener(v -> {
-//            Intent intent = new Intent(MainActivity.this, Demografik_malumotlar.class);
-//            startActivity(intent);
-//        });
+        linearLayout7.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Demografik_Malumotlar.class);
+            startActivity(intent);
+        });
         // boshqa activityga o'tish tugadi
 
-        // PieChart
-        //Values in TextInputLayouts should be displayed using percentages in pieChart, separated by gender
 
 
 
+        Counter counter = new Counter(demografik_malumotlar.umumiySoni, textView);
+        counter.start();
 
-        pieChart = findViewById(R.id.pieChart);
-        pieChart.setUsePercentValues(true);
-        pieChart.getDescription().setEnabled(false);
-        pieChart.setExtraOffsets(5, 10, 5, 5);
-        pieChart.setDragDecelerationFrictionCoef(0.95f);
-        pieChart.setDrawHoleEnabled(true);
-        pieChart.setHoleColor(Color.WHITE);
-        pieChart.setTransparentCircleRadius(61f);
-        pieChart.animateY(3000);
-        ArrayList<PieEntry> yValues = new ArrayList<>();
-        yValues.add(new PieEntry(25f, "Erkaklar"));
-        yValues.add(new PieEntry(33f, "Ayollar"));
-        yValues.add(new PieEntry(42f, "Vafot etganlar"));
-        PieDataSet dataSet = new PieDataSet(yValues, "Aholi");
-        dataSet.setSliceSpace(10f);
-        dataSet.setSelectionShift(15f);
-        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-        PieData data = new PieData((dataSet));
-        data.setValueTextSize(10f);
-        data.setValueTextColor(Color.YELLOW);
-        pieChart.setData(data);
-        // PieChart tugadi
-
+        TextView textView1;
+        textView1 = findViewById(R.id.VafotEtganlar_soni);
+        Counter counter1 = new Counter(demografik_malumotlar.vafotEtganlarSoni, textView1);
+        counter1.start();
 
     }
 
@@ -172,5 +163,34 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 // shu yerda 2 sekunddan keyin chiqishni amalga oshiradi
+
+    public static class Counter {
+        private int counter;
+        private TextView textView;
+        private CountDownTimer countDownTimer;
+
+        public Counter(int counter, TextView textView) {
+            this.counter = counter;
+            this.textView = textView;
+        }
+
+
+        public void start() {
+            countDownTimer = new CountDownTimer(counter, 1) {
+                public void onTick(long millisUntilFinished) {
+                    textView.setText(String.valueOf(counter - (int) (millisUntilFinished)));
+                }
+
+                public void onFinish() {
+                    textView.setText(String.valueOf(counter));
+                }
+            }.start();
+        }
+
+        public void stop() {
+            countDownTimer.cancel();
+        }
+    }
+
 
 }

@@ -14,7 +14,7 @@ public class Splash_Screen_activity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         new Handler().postDelayed(() -> {
-            startActivity(new Intent(Splash_Screen_activity.this, SignUp_Firebase_Activity.class));
+            startActivity(new Intent(Splash_Screen_activity.this, SignIn_Firebase_Activity.class));
             finish();
         }, 1500);
     }

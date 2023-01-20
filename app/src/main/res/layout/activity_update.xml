@@ -202,6 +202,7 @@
                 app:startIconTint="@color/primary">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/MahallasiUpdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
@@ -228,6 +229,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/JinsiUpdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
@@ -252,6 +254,7 @@
 
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/BirthDataTimeUpdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
